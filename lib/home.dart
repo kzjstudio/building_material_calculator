@@ -1,3 +1,4 @@
+import 'package:building_material_calculator/answer_page.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -222,7 +223,10 @@ class _HomeState extends State<Home> {
                 ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      print('good');
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const AnswerPage(
+                                wallheight: wallLengthController.value,
+                              )));
                     }
                   },
                   child: const Text('Calculate'),
