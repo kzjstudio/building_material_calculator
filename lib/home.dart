@@ -224,8 +224,15 @@ class _HomeState extends State<Home> {
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const AnswerPage(
-                                wallheight: wallLengthController.value,
+                          builder: (context) => AnswerPage(
+                                wallheight: double.parse(
+                                    wallLengthController.value.text),
+                                wallWidth: double.parse(
+                                    wallWidthController.value.text),
+                                materialLegth: double.parse(
+                                    materialLengthController.value.text),
+                                materialWidth: double.parse(
+                                    materialWidthController.value.text),
                               )));
                     }
                   },
